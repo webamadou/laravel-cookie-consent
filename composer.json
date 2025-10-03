@@ -1,0 +1,28 @@
+{
+  "name": "comparek/laravel-cookie-consent",
+  "description": "Design-agnostic cookie consent for Laravel.",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Comparek\\CookieConsent\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Comparek\\CookieConsent\\CookieConsentServiceProvider"
+      ],
+      "aliases": {
+        "Consent": "Comparek\\CookieConsent\\Facades\\Consent"
+      }
+    }
+  },
+  "require": {
+    "php": ">=8.2",
+    "illuminate/support": "^12.0",
+    "illuminate/http": "^12.0",
+    "illuminate/view": "^12.0",
+    "illuminate/routing": "^12.0"
+  }
+}
