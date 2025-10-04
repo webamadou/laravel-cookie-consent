@@ -5,6 +5,9 @@ namespace Comparek\CookieConsent;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Comparek\CookieConsent\Services\ConsentManager;
+use Comparek\CookieConsent\Livewire\CookieBanner;
+use Comparek\CookieConsent\Livewire\CookieSettings;
+use Livewire\Livewire;
 
 class CookieConsentServiceProvider extends ServiceProvider
 {
