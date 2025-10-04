@@ -34,5 +34,10 @@ class CookieConsentServiceProvider extends ServiceProvider
         ], 'cookie-consent-views');
 
         Blade::if('cookiesAllowed', fn(string $cat) => app(ConsentManager::class)->allowed($cat));
+
+        if (class_exists(Livewire::class)) {
+            Livewire::component('cookie-consent.settings', CookieSettings::class);
+            Livewire::component('cookie-consent.banner', CookieBanner::class);
+        }
     }
 }
