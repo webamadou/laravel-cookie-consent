@@ -1,9 +1,10 @@
 <?php
 
 return [
-    'cookie_name'   => env('COOKIE_CONSENT_NAME', 'comparek_cookie_consent'),
-    'lifetime_days' => env('COOKIE_CONSENT_LIFETIME_DAYS', 180),
-    'route_prefix'  => env('COOKIE_CONSENT_PREFIX', 'cookie-consent'),
+
+    'cookie_name'   => 'comparek_cookie_consent',
+    'lifetime_days' => 180,
+    'route_prefix'  => 'cookie-consent',
 
     'categories' => [
         'essential'   => ['required' => true,  'label' => 'Essentials'],
@@ -15,7 +16,8 @@ return [
     'cookie' => [
         'path'     => '/',
         'domain'   => null,
-        'secure'   => env('COOKIE_CONSENT_SECURE', app()->environment('production')),
+        // Use app env (production => secure cookie)
+        'secure'   => config('app.env') === 'production',
         'httpOnly' => false,
         'sameSite' => 'Lax',
     ],
